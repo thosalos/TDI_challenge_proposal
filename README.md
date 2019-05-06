@@ -34,10 +34,11 @@ The density of wells drilled is highly variable across the state, which complica
 
 A natural model for this analysis is a nearest neighbor interpolation. Here I have used the five nearest wells to predict well yields across the state. Weighting the neighboring wells by distance provides a slight improvement to the predictions.
 <p float="left">
-  <img src="/Nn_interp_plot.png" width="400" />
-  <img src="/Wnn_interp_plot.png" width="400" /> 
+  <img src="/Nn_interp_plot.png" width="410" />
+  <img src="/Wnn_interp_plot.png" width="410" /> 
 </p>
-### Taking this further...
+### Taking this further
+
 In this initial analysis, I demonstrate that data from local residential wells alone can provide a rough model to predict well yield at a given location. 
 
 In continuing this project, additional data from this set (e.g. depth drilled and well specifications) would further improve this model. From intuition and the exploratory visualizations in Sonoma County, it is also clear that geologic information has a profound effect on well yield. Data on local groundwater measurements, geologic and aquifer formations, precipitation is also available from the state of California and this information will be integrated into a better model. Additionally, further improvements can be made to the model by taking into consideration that some areas have very sparse data. Accounting for these areas separately using different methods could further improve the overall model.
