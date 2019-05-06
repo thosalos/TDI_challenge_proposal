@@ -15,9 +15,9 @@ This analysis uses data from Well Completion Reports provided by the California 
 ![Alt text](/Voronoi_plot.png?raw=true)
 
 
-<p float="left">
-  <img src="/Nn_interp_plot.png" width="100" />
-  <img src="/Wnn_interp_plot.png" width="100" /> 
+<p float="center">
+  <img src="/Nn_interp_plot.png" width="500" />
+  <img src="/Wnn_interp_plot.png" width="500" /> 
 </p>
 ### Taking this further...
 
