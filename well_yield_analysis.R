@@ -14,7 +14,7 @@ library(rspatial)
 library(dismo)
 library(gstat)
 
- #cwells <- read_csv("OSWCR.csv")
+#wells <- read_csv("OSWCR.csv")
 
 # Clean data for useful fields; remove outliers and incomplete data.
 
@@ -40,7 +40,7 @@ clean_res_wells <- na.omit(clean_res_wells) # ~108K complete entries
 
 clean_res_wells$casing_length <- clean_res_wells$BottomofPerforatedInterval - clean_res_wells$TopOfPerforatedInterval
 clean_res_wells <- filter(clean_res_wells, casing_length >= 0) 
-```
+
 
 # exploratory visualization of data
 
@@ -169,7 +169,7 @@ sonoma_map <- ggmap(sonoma_map_data) +
              alpha = .8, cex = 0.8) +
   no_axes +
   theme(legend.title = element_blank()) +
-  ggtitle("Domestic Wells in Sonoma County Vary with Geography")
+  ggtitle("Domestic Well Yield in Sonoma County Varies with Geography")
 
 sonoma_map
 
@@ -226,7 +226,8 @@ cuts <- c(0, 10, 20, 50, 75, Inf)
 # set up a palette of interpolated colors
 blues <- colorRampPalette(c('yellow', 'orange', 'blue', 'dark blue'))
 pols <- list("sp.polygons", cali_sp, fill = "lightgray")
-spplot(well_sp, "WellYield", cuts=cuts, col.regions=blues(5), sp.layout=pols, pch=20, cex=0.5)
+yield_distribution <- spplot(well_sp, "WellYield", cuts=cuts, col.regions=blues(5), sp.layout=pols, pch=20, cex=0.5, 
+                             colorkey = TRUE, main = "Distribution of Well Yields (GPM)")
 
 
 
@@ -241,16 +242,15 @@ cali_ta <- spTransform(cali_sp, TA)
 well_voron <- voronoi(well_ta)
 cali_agg <- aggregate(cali_ta)
 cali_voron <- raster::intersect(well_voron, cali_agg)
-spplot(cali_voron, 'WellYield', col.regions=rev(get_col_regions()), lwd = 0.2)
+voronoi_plot <- spplot(cali_voron, 'WellYield', col.regions=rev(get_col_regions()), lwd = 0.2,
+                       main = "Voronoi Set of Well Yields")
+voronoi_plot
 
-
-
-
-# Rasterize Voronoi cells s
+# Rasterize Voronoi cells
 
 r <- raster(cali_ta, res=1000)
 vr <- rasterize(cali_voron, r, field = cali_voron$WellYield)
-plot(vr)
+plot(vr, main = "Voronoi Predictions of Well Yields (GPM)", axes = FALSE)
 
 
 # 5-fold cross-validation of Voronoi predictions using RMSE
@@ -284,7 +284,7 @@ gs <- gstat(formula=WellYield~1, locations=well_ta, nmax=5, set=list(idp = 0))
 nn <- interpolate(r, gs)
 
 nnmsk <- mask(nn, vr)
-plot(nnmsk)
+plot(nnmsk, main = "Nearest Neighbor Interpolation of Well Production (GPM)", axes = FALSE)
 
 # Five-fold cross-validation of nearest neighbor interpolation
 
@@ -307,7 +307,7 @@ gs <- gstat(formula=WellYield~1, locations=well_ta, nmax = 5)
 idw <- interpolate(r, gs)
 # inverse distance weighted interpolation
 idwr <- mask(idw, vr)
-plot(idwr)
+plot(idwr, main = "Weight NN Interpolation of Well Production", axes = FALSE)
 
 
 
