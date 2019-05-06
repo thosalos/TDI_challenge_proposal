@@ -16,8 +16,8 @@ This analysis uses data from Well Completion Reports provided by the California 
 
 
 <p float="left">
-  <img src="/Nn_interp_plot.png" width="500" />
-  <img src="/Wnn_interp_plot.png" width="500" /> 
+  <img src="/Nn_interp_plot.png" width="300" />
+  <img src="/Wnn_interp_plot.png" width="300" /> 
 </p>
 ### Taking this further...
 
