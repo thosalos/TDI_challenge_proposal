@@ -10,7 +10,7 @@ This analysis uses data from Well Completion Reports provided by the California 
 
 ### Well Production Varies Across Geography
 
-![Alt text](TDI_challenge_proposal/Voronoi_plot.png?raw=true)
+![Alt text](/Voronoi_plot.png?raw=true)
 ### Predicting New Well Production from nearest wells
 
 ### Taking this further...
