@@ -1,7 +1,7 @@
 # Project Proposal: 
 # Waterworld: A Tool for Homeowners and Businesses to Improve Water Well Drilling Outcomes
 
-In California, more than two million water wells have been drilled to service industrial, agricultural and residential water needs. Drilling a well is an expensive endeavor, costing between $15-25k for a residential well to $100k+ for high-production agricultural wells, and finding a reliable water supply is not guaranteed. Existing methods for predicting well yield range from the use of quack ‘water diviners’ to expensive geologic studies with questionable accuracy. Homeowners and businesses in California should be empowered with data to help improve well drilling outcomes. For my project, I propose building an interactive web app that allows a user to explore well production across California as well as to enter a specific location and get:
+In California, more than two million water wells have been drilled to service industrial, agricultural and residential water needs. Drilling a well is an expensive endeavor, costing between $15-25k for a residential well to $100k+ for high-production agricultural wells, and finding a reliable water supply is not guaranteed. Existing methods for predicting well yields range from the use of quack ‘water diviners’ to expensive geologic studies with questionable accuracy. Homeowners and businesses in California should be empowered with data to help improve well drilling outcomes. For my project, I propose building an interactive web app that allows a user to explore well production across California as well as to enter a specific location and get:
  
 * Predictions about well yield
 * Recommendations around ideal drilling depth
