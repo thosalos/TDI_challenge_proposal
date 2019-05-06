@@ -39,6 +39,9 @@ A natural model for this analysis is a nearest neighbor interpolation. Here I ha
   <img src="/Wnn_interp_plot.png" width="410" /> 
 </p>
 
+### Assessing the fit of these models
+Developing a good metric of fitness for these models is challenging. In my preliminary analysis I have used RMSE to asses the fit of each model (see code in this repository) and found my initial weighted nearest neighbor approach to be the best model. Additional work is needed to develop a better metric as RMSE is susceptible to outliers and some areas of California have very sparse data. Developing a good measure of fit is a top priority for moving forward with this project in order to better evaluate these and future models.
+
 ### Taking this further
 
 In this initial analysis, I demonstrate that data from local residential wells alone can provide a rough model to predict well yield at a given location. 
