@@ -1,7 +1,7 @@
 # Project Proposal: 
 # Waterworld: A Tool for Homeowners and Businesses to Improve Well Drilling Outcomes
 
-In California, more than two million water wells have been drilled to service industrial, agricultural and residential water needs. Drilling a well is an expensive endeavor, costing between $15-25k for a residential well and up to $100k+ for high-production agricultural wells, and with a 40-50% success rate per drilling, finding a reliable water supply is not guaranteed. Existing methods for predicting well yield range from the use of quack ‘water diviners’ to expensive geologic studies with questionable accuracy. Homeowners and businesses in California should be empowered with data to help improve well drilling outcomes. For my project, I propose building an interactive web app that allows a user to explore well production across California as well as to enter a specific location and get:
+In California, more than two million water wells have been drilled to service industrial, agricultural and residential water needs. Drilling a well is an expensive endeavor, costing between $15-25k for a residential well to $100k+ for high-production agricultural wells, and finding a reliable water supply is not guaranteed. Existing methods for predicting well yield range from the use of quack ‘water diviners’ to expensive geologic studies with questionable accuracy. Homeowners and businesses in California should be empowered with data to help improve well drilling outcomes. For my project, I propose building an interactive web app that allows a user to explore well production across California as well as to enter a specific location and get:
  
 * Predictions about well yield
 * Recommendations around ideal drilling depth
@@ -18,11 +18,11 @@ Intuition tells us that geography is essential to the availability of groundwate
   <img src="/Well_yield_plot.png" width="400" />
   <img src="/Sonoma_plot.png" width="400" /> 
 </p>
-This is easily confirmed by visualizing the distribution of residential well yields across California. Looking across the state, it is immediately clear that certain areas, such as the Central Valley, generally have higher production wells. This distribution is aligned with our intuition--the Central Valley, famous for it's agriculture, is known to have abundant and accessible groundwater for irrigation. 
+This is easily confirmed by visualizing the distribution of residential well yields across California. Looking across the state, it is immediately clear that certain areas, such as the Central Valley, generally have higher production wells. This distribution is aligned with our intuition--the Central Valley, famous for agriculture, is known to have abundant and accessible groundwater for irrigation. 
 
 Looking at a more local level (in this case Sonoma County), we also see that production varies on a more local scale. Again, the distribution matches our intuition. For those familiar with Sonoma County geography, higher yield wells cluster in the Santa Rosa Valley with lower production wells clustering in the coastal mountain range.
 
-This exploratory visualization motivates building an initial model to predict well yields using yield data from already existing wells.
+This exploratory visualization motivates building an initial model to predict well yields using data from already existing wells.
 
 ### Predicting New Well Production from Neighboring Wells
 
@@ -47,7 +47,8 @@ Developing a good metric of fitness for these models is challenging. In my preli
 In this initial analysis, I demonstrate that data from local residential wells alone can provide a rough model to predict well yield at a given location. 
 
 To further this project I would:
- 
+
+* Develop a good metric of fitness for these models on a local level  
 * Improve the model developed here by incorporating additional data around groundwater measurements, geologic information and precipitation
 * Extend this model to industrial and agricultural wells
 * Develop a model to recommend well depth that integrates data using approaches such as random forests for spatial models or kriging methods
