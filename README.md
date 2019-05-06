@@ -26,8 +26,8 @@ This exploratory visualization motivates building an initial model to predict we
 To develop an initial model, I have defined a Voronoi set from the existing well data. By rasterizing this data we can get rough predictions for well yields. 
 
 <p float="left">
-  <img src="/Voronoi_set_plot.png" width="450" />
-  <img src="//Voronoi_plot.png" width="450" /> 
+  <img src="/Voronoi_set_plot.png" width="410" />
+  <img src="/Voronoi_plot.png" width="410" /> 
 </p>
 
 The density of wells drilled is highly variable across the state, which complicates assessing the accuracy of the model as a whole as some regions will have poor accuracy due to more local data. To assess accuracy across the whole model, I used five-fold cross validation and used root mean square error as a measure of fitness.
