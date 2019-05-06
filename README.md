@@ -13,7 +13,12 @@ This analysis uses data from Well Completion Reports provided by the California 
 ![Alt text](/Well_yield_plot.png?raw=true)
 ### Predicting New Well Production from nearest wells
 ![Alt text](/Voronoi_plot.png?raw=true)
-![Alt text](/Nn_interp_plot.png?raw=true) ![Alt text](/Wnn_interp_plot.png?raw=true)
+
+
+<p float="left">
+  <img src="/Nn_interp_plot.png" width="100" />
+  <img src="/Wnn_interp_plot.png" width="100" /> 
+</p>
 ### Taking this further...
 
 
