@@ -11,6 +11,10 @@ This analysis uses data from Well Completion Reports provided by the California 
 ### Well Production Varies Across Geography
 
 ![Alt text](/Well_yield_plot.png?raw=true)
+<p float="left">
+  <img src="/Well_yield_plot.png" width="400" />
+  <img src="/Sonoma_plot.png" width="400" /> 
+</p>
 ### Predicting New Well Production from nearest wells
 ![Alt text](/Voronoi_plot.png?raw=true)
 
