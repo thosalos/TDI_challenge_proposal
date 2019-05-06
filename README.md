@@ -1,10 +1,13 @@
-# Project Proposal: Predicting Residential Water Well Production
+# Project Proposal: 
+# Waterworld: A Tool for Homeowners and Businesses to Improve Well Drilling Outcomes
 
-There are as many 2 million water wells in California, ranging from industrial and agricultural to residential.
-The yield of a well is dependent of a variety of factors, but the most important is the availability of groundwater at a given location.
-There is currently no reliable method of predicting well yield. Expensive geologic surveys can be performed to assess the location of ground water, but these are not always reliable.
-Here I propose to analyze data on wells drilled in California to understand the how well yields are distributed across the California geography and use this data to estimate well production for new wells drilled.
+In California, more than two million water wells have been drilled to service industrial, agricultural and residential water needs. Drilling a well is an expensive endeavor, costing between $15-25k for a residential well and up to $100k+ for high-production agricultural wells, and with a 40-50% success rate per drilling, finding a reliable water supply is not guaranteed. Existing methods for predicting well yield range from the use of quack ‘water diviners’ to expensive geologic studies with questionable accuracy. Homeowners and businesses in California should be empowered with data to help improve well drilling outcomes. For my project, I propose building an interactive web app that allows a user to explore well production across California as well as to enter a specific location and get:
+ 
+* Predictions about well yield
+* Recommendations around ideal drilling depth
+* Suggestions for ideal well drilling companies in the area with highest success rates given dynamic input (i.e. residential vs. agricultural wells)
 
+Following is a preliminary feasibility study to analyze data on residential wells drilled in California to estimate well production for new wells drilled.
 
 This analysis uses data from Well Completion Reports provided by the California Department of Water Resources, available here: https://data.ca.gov/dataset/well-completion-reports
 
@@ -30,8 +33,6 @@ To develop an initial model, I have defined a Voronoi set from the existing well
   <img src="/Voronoi_plot.png" width="410" /> 
 </p>
 
-The density of wells drilled is highly variable across the state, which complicates assessing the accuracy of the model as a whole as some regions will have poor accuracy due to more local data. To assess accuracy across the whole model, I used five-fold cross validation and used root mean square error as a measure of fitness.
-
 A natural model for this analysis is a nearest neighbor interpolation. Here I have used the five nearest wells to predict well yields across the state. Weighting the neighboring wells by distance provides a slight improvement to the predictions.
 <p float="left">
   <img src="/Nn_interp_plot.png" width="410" />
@@ -41,14 +42,12 @@ A natural model for this analysis is a nearest neighbor interpolation. Here I ha
 
 In this initial analysis, I demonstrate that data from local residential wells alone can provide a rough model to predict well yield at a given location. 
 
-In continuing this project, additional data from this set (e.g. depth drilled and well specifications) would further improve this model. From intuition and the exploratory visualizations in Sonoma County, it is also clear that geologic information has a profound effect on well yield. Data on local groundwater measurements, geologic and aquifer formations, precipitation is also available from the state of California and this information will be integrated into a better model. Additionally, further improvements can be made to the model by taking into consideration that some areas have very sparse data. Accounting for these areas separately using different methods could further improve the overall model.
-
-In this analysis, I have only considered residential wells. Similar analyses will be performed on agricultral and industrial wells, which are much deeper and produce much higher yields, extending the use of this data to 
-
-The deliverable from this project will be an interactive web app that allows a user to explore well production across California as well as enter a specific location and get a prediction of well yield along with information about the wells that exist around that location. This project will create a simple tool to allow users to instantly get an estimate of what they can expect if they dig a well, a service that is currently not available. This is invaluable information to someone who is looking at purchasing or building a house in rural areas and needs to assess the viability of access to water.
-
-
-
-
-
-
+To further this project I would:
+ 
+* Improve the model developed here by incorporating additional data around groundwater measurements, geologic information and precipitation
+* Extend this model to industrial and agricultural wells
+* Develop a model to recommend well depth that integrates data using approaches such as random forests for spatial models or kriging methods
+* Generate a recommendation system for local well drilling companies based on their success rate
+* Integrate these analyses into a coherent tool for homeowners and businesses
+ 
+I believe the output of my project would be of high interest to the the ~370k homeowners and the ~100k industrial and agricultural firms using wells in California. I hope to empower homeowners and businesses with such a tool.
