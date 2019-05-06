@@ -38,6 +38,7 @@ A natural model for this analysis is a nearest neighbor interpolation. Here I ha
   <img src="/Nn_interp_plot.png" width="410" />
   <img src="/Wnn_interp_plot.png" width="410" /> 
 </p>
+
 ### Taking this further
 
 In this initial analysis, I demonstrate that data from local residential wells alone can provide a rough model to predict well yield at a given location. 
