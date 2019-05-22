@@ -39,19 +39,24 @@ A natural model for this analysis is a nearest neighbor interpolation. Here I ha
   <img src="/Wnn_interp_plot.png" width="410" /> 
 </p>
 
-### Assessing the fit of these models
-Developing a good metric of fitness for these models is challenging. In my preliminary analysis I have used RMSE to asses the fit of each model (see code in this repository) and found my initial weighted nearest neighbor approach to be the best model. Additional work is needed to develop a better metric as RMSE is susceptible to outliers and some areas of California have very sparse data. Developing a good measure of fit is a top priority for moving forward with this project in order to better evaluate these and future models.
+### Spatial models and additional data increase prediction accuracy by 30%
+
+Integrating well specification data (well depth and casing length) and elevation data (from USGS) in more complex models can improve the predictions. Currently, I have tried random forests for spatial analysis, kriging methods and a spatial Durbin error model to improve the fit. The spatial Durbin error model provided the best fit as assessed by five-fold cross-validation of RMSE. The spatial lag model provided ~30% improvement compared to the null model.
+
+### Visualization of model predictions provides essential validation
+![alt text](![alt text](https://github.com/thosalos/TDI_challenge_proposal/blob/master/russian_river.png))
+
+A visualization of the location of interest in Guerneville CA demonstrates the utility of geographic visualization in combination with the model. My model predicts ~30 GPM yield for my location. The visualization shows that this is skewed by several nearby high production wells that are in a river basin. By comparing the potential well of interest to wells that are on more similar terrain nearby, it can be determined that the expected yield will be lower.
 
 ### Taking this further
 
 In this initial analysis, I demonstrate that data from local residential wells alone can provide a rough model to predict well yield at a given location. 
 
 To further this project I would:
-
-* Develop a good metric of fitness for these models on a local level  
+  
 * Improve the model developed here by incorporating additional data around groundwater measurements, geologic information and precipitation
 * Extend this model to industrial and agricultural wells
-* Develop a model to recommend well depth that integrates data using approaches such as random forests for spatial models or kriging methods
+* Develop a model to recommend well depth that integrates data using approaches such as spatial lag models, random forests or kriging methods
 * Generate a recommendation system for local well drilling companies based on their success rate
 * Integrate these analyses into a coherent tool for homeowners and businesses
  
