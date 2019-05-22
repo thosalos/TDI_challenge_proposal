@@ -44,7 +44,7 @@ A natural model for this analysis is a nearest neighbor interpolation. Here I ha
 Integrating well specification data (well depth and casing length) and elevation data (from USGS) in more complex models can improve the predictions. Currently, I have tried random forests for spatial analysis, kriging methods and a spatial Durbin error model to improve the fit. The spatial Durbin error model provided the best fit as assessed by five-fold cross-validation of RMSE. The spatial lag model provided ~30% improvement compared to the null model.
 
 ### Visualization of model predictions provides essential validation
-![alt text](![alt text](https://github.com/thosalos/TDI_challenge_proposal/blob/master/russian_river.png))
+![alt text](https://github.com/thosalos/TDI_challenge_proposal/blob/master/russian_river.png)
 
 A visualization of the location of interest in Guerneville CA demonstrates the utility of geographic visualization in combination with the model. My model predicts ~30 GPM yield for my location. The visualization shows that this is skewed by several nearby high production wells that are in a river basin. By comparing the potential well of interest to wells that are on more similar terrain nearby, it can be determined that the expected yield will be lower.
 
